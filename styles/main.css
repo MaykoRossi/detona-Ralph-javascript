@@ -1,0 +1,130 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-image: url("../images/wall.png");
+    background-size: cover;
+    background-position: center;
+}
+
+/* MENU */
+.menu {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 90px;
+    width: 100%;
+    background-color: black;
+    color: azure;
+    border-bottom: 3px solid white;
+    padding: 0 10px;
+}
+
+/* Painel de jogo */
+.panel {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+/* Quadrados do jogo */
+.square {
+    height: 150px;
+    width: 150px;
+    border: 1px solid black;
+    background-color: rgb(6, 161, 110);
+    transition: transform 0.2s ease-in-out;
+}
+
+.square:active {
+    transform: scale(0.95);
+}
+
+.enemy {
+    background-image: url("../images/ralph.png");
+    background-size: cover;
+}
+
+/* Estilização do contador de vidas */
+.menu-lives {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 1024px) {
+    .square {
+        height: 120px;
+        width: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .menu-lives {
+        margin-top: 5px;
+    }
+
+    .panel {
+        flex-direction: column;
+    }
+
+    .panel-row {
+        display: flex;
+        justify-content: center;
+    }
+
+    .square {
+        height: 100px;
+        width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .square {
+        height: 80px;
+        width: 80px;
+    }
+
+    .enemy {
+        background-size: contain;
+    }
+
+    .menu h2 {
+        font-size: 14px;
+    }
+}
+
+/* EFEITO SHAKE */
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    75% {
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.shake {
+    animation: shake 0.3s ease-in-out;
+}
